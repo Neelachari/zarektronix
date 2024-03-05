@@ -6,10 +6,6 @@ import './App.css'
 const App = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
 
-  const toggleMode = () => {
-    setIsOnline(!isOnline);
-  };
-
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
@@ -25,11 +21,11 @@ const App = () => {
 
   return (
     <div>
-      <h1>Welcome to FluxForm Signup</h1>
+      <h1 >Welcome to FluxForm Signup</h1>
       {isOnline ? (
-        <OnlineForm toggleMode={toggleMode} />
+        <OnlineForm  />
       ) : (
-        <OfflineForm toggleMode={toggleMode} />
+        <OfflineForm  />
       )}
     </div>
   );

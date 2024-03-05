@@ -21,13 +21,14 @@ import {
 import { useToast } from '@chakra-ui/react'
 import axios from 'axios';
 
-const OnlineForm = ({toggleMode}) => {
+const OnlineForm = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isPassword,setIsPassword]=useState(true)
   const toast = useToast()
 
   const validateEmail = () => {
@@ -36,15 +37,48 @@ const OnlineForm = ({toggleMode}) => {
     setIsEmailValid(emailRegex.test(email));
   };
 
+
+  const validatePassword = () => {
+    // Password validation with at least one uppercase letter and one special character
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])/;
+    setIsPassword(passwordRegex.test(password));
+  };
+
+  
+
   const handleSubmit = async  (e) => {
     e.preventDefault();
 
     // Validate email before submission
     validateEmail();
+    
 
     // Check if email is valid before proceeding
     if (!isEmailValid) {
-      alert('Please enter a valid email address.');
+      // alert('Please enter a valid email address.');
+      toast({
+        title: 'Register Unsuccessful.',
+        description: "Please enter a valid email address.",
+        status: 'waning',
+        duration: 3000,
+        position:"top",
+        isClosable: true,
+      })
+      return;
+    }
+
+    validatePassword();
+
+    if (!isPassword) {
+      // alert('Please enter a valid email address.');
+      toast({
+        title: 'Register Unsuccessful.',
+        description: "The password should contain special charector ~!@#$%^&*(){}[]",
+        status: 'waning',
+        duration: 3000,
+        position:"top",
+        isClosable: true,
+      })
       return;
     }
 
@@ -84,7 +118,7 @@ const OnlineForm = ({toggleMode}) => {
   return (
     <Container maxW="7xl" p={{ base: 5, md: 10 }}>
       <Center>
-        <Stack spacing={4}>
+        <Stack spacing={4}  border={"1px solid gray"} p={{ base: 3, sm: 6 }}   boxShadow="lg" rounded="lg">
           <Stack align="center">
             <Heading fontSize="2xl">Online Sign in to your account</Heading>
             <Avatar  >
@@ -97,8 +131,8 @@ const OnlineForm = ({toggleMode}) => {
             h="max-content !important"
             bg={useColorModeValue('white', 'gray.700')}
            
-            rounded="lg"
-            boxShadow="lg"
+            
+            // boxShadow="lg"
             p={{ base: 5, sm: 10 }}
             spacing={8}
             onSubmit={handleSubmit}
@@ -116,14 +150,17 @@ const OnlineForm = ({toggleMode}) => {
             validateEmail();
           }}
           required placeholder='Enter your email' />
-           {!isEmailValid && <span style={{ color: 'red' }}>Invalid email address</span>}
+          <Text textAlign={"left"}>{!isEmailValid && <span style={{ color: 'red' }}>Invalid email address</span>}</Text>
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
                 <InputGroup size="md">
                   <Input rounded="md" type={show ? 'text' : 'password'}  value={password}
-                      onChange={(e) => setPassword(e.target.value)} required placeholder='Enter your password'  />
+                      onChange={(e) => {setPassword(e.target.value); validatePassword();}} required placeholder='Enter your password'  />
+                     
+                
                   <InputRightElement width="4.5rem">
+                 
                     <Button
                       h="1.75rem"
                       size="sm"
@@ -138,8 +175,11 @@ const OnlineForm = ({toggleMode}) => {
                       {show ? 'Hide' : 'Show'}
                      
                     </Button>
+                   
                   </InputRightElement>
+                  
                 </InputGroup>
+                <Text textAlign={"left"} fontSize={"15px"} >{!isPassword && <span style={{ color: 'red' }}>should have special charectors</span>}</Text>
               </FormControl>
             </VStack>
             <VStack w="100%">
@@ -155,7 +195,6 @@ const OnlineForm = ({toggleMode}) => {
               >
                 Register
               </Button>
-             <Button onClick={toggleMode}>Switch to Offline Mode</Button>
             </VStack>
           </VStack>
         </Stack>
