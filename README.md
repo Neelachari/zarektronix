@@ -23,7 +23,7 @@ Install dependencies
 
 ```
 Live Running server  -
-Start the server
+Start the React-app
 
 ```bash
   npm run dev
@@ -58,7 +58,7 @@ Contributions are always welcome!
  [Neelachari N H](https://github.com/Neelachari)
 ## Linkedin
 
- [Neelesh](https://www.linkedin.com/in/neelesh-n-h-2704a7196/)
+ [Neelachari N H](https://www.linkedin.com/in/neelesh-n-h-2704a7196/)
  
 
  
