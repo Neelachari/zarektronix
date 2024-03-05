@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Schrodinger's Signup</h1>
+      <h1>Welcome to FluxForm Signup</h1>
       {isOnline ? (
         <OnlineForm toggleMode={toggleMode} />
       ) : (
