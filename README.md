@@ -1,7 +1,5 @@
 # zarektronix
 
-Its a web application that provides a platform to buy Pharmacy.It a user friendly E Commerce Website.
-
 
 [website Url--](https://fluxform-signup.netlify.app/)
 
