@@ -4,10 +4,10 @@
 [website Url--](https://fluxform-signup.netlify.app/)
 
 ## Tech Stack
-**Client:** Html ,Css
+**Client:** React.js, ChakraUI
 **Client Server Api:** Local Storage,Json Server.
 ## 🛠 Skills
-Javascript, HTML, CSS, React.js, ChakraUI...
+React.js, ChakraUI, Node.js, Express.js, MongoDB...
 
 
 ## Run Locally
