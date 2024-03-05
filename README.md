@@ -1,18 +1,7 @@
 # zarektronix
 
-Its a web application that provides a platform to buy Pharmacy.It a user friendly E Commerce Website.
 
-![Project-icon](https://user-images.githubusercontent.com/112808279/229431818-2e9a03ff-576e-4691-86f2-f91af434f3ae.png)
-
-
-
-[website Url--](https://mid-shoppee.netlify.app/)
-
-## Login credentials
-```bash
-email: user@123 
-password: user@123
-```
+[website Url--](https://fluxform-signup.netlify.app/)
 
 ## Tech Stack
 **Client:** Html ,Css
@@ -26,7 +15,7 @@ Javascript, HTML, CSS, React.js, ChakraUI...
 Clone the project
 ```bash
 git clone
-https://github.com/Neelachari/supreme-honey-5251
+https://github.com/Neelachari/zarektronix
 
 Install dependencies
 
@@ -37,16 +26,16 @@ Live Running server  -
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 
 ## Support
 For support, email -neelachari34@gmail.com 
 
-For Go to the website click the link:-https://legendary-monstera-f8fb81.netlify.app/
+For Go to the website click the link:-[https://legendary-monstera-f8fb81.netlify.app/](https://fluxform-signup.netlify.app/)
 
-GitHub Link:https://github.com/Neelachari/supreme-honey-5251
+GitHub Link:https://github.com/Neelachari/zarektronix
 ## Screenshots
 
 
